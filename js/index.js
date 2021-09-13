@@ -56,7 +56,7 @@ const View = ((model) => {
             htmlblock = 
                 `<div class="items" id="${id}">
                 <div class="task-name">
-                    <div><input type="checkbox" class="task-checkbox"></div><span>${title}</span>
+                <label class="task-container">${title}<input type="checkbox" class="task-checkbox"><span class="checkmark"></span></label>
                 </div>
                 <div class="labels">
                     <div class="overdue-lab ${overdue}">${counter} Overdue</div>
