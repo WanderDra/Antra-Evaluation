@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="panel">
+        <div class="container">
+            <div class="info">
+                <div class="to-do"><h2>To-Do</h2></div>
+                <div class="show-task">
+                    <span>Show Task: </span>
+                    <div class="switcher">
+                        <svg class="switcher-off" height="30" width = "60">
+                            <rect x="5" y="5" rx="10" ry="10" width="50" height="20"
+                            style="fill:none; stroke: gray; stroke-width: 2px;"></rect>
+                            <circle cx="17" cy="15" r="13" fill="skyblue"/>
+                            <text fill="#000000" font-size="12" x="30" y="20">Off</text>    
+                        </svg>
+                        <svg class="switcher-on" height="30" width = "60">
+                            <rect x="5" y="5" rx="10" ry="10" width="50" height="20"
+                            style="fill:none; stroke: gray; stroke-width: 2px;"></rect>
+                            <circle cx="43" cy="15" r="13" fill="skyblue"/>
+                            <text fill="#000000" font-size="12" x="10" y="20">On</text>    
+                        </svg>
+                    </div>
+                </div>
+                <div class="overdue">
+                    <div id="overdue-counter" class="counter">2</div>
+                    <p>Overdue</p>
+                </div>
+                <div class="due-soon">
+                    <div id="due-soon-counter" class="counter">3</div>
+                    <p>Due Soon</p>
+                </div>
+                <div class="all">
+                    <div id="all-counter" class="counter">5</div>
+                    <p>All</p>
+                </div>
+            </div>
+            <div class="list">
+                <!-- <div class="items" id="1">
+                    <div class="task-name">
+                        <div><input type="checkbox" class="task-checkbox"></div><span>Task1</span>
+                    </div>
+                    <div class="labels">
+                        <div class="overdue-lab">5 Overdue</div>
+                        <div class="soon-lab unselected">14 Due Soon</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
