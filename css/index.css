@@ -150,14 +150,14 @@ html, body{
 
 .switcher-off{
     position: absolute;
-    visibility: hidden;
-    /* visibility: visible; */
+    /* visibility: hidden; */
+    visibility: visible;
 }
 
 .switcher-on {
     position: absolute;
-    /* visibility: hidden; */
-    visibility: visible;
+    visibility: hidden;
+    /* visibility: visible; */
 }
 
 .info p:hover{
