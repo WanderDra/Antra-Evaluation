@@ -19,25 +19,25 @@ const Model = (() => {
 
 const TodoAPI = ((model) => {
     const importData = () => {
-        model.tasklist.push(new model.Task(1, "Campaign Tasks", true, false, 1));
+        model.tasklist.push(new model.Task(1, "Campaign Tasks", false, false, 1));
         model.tasklist.push(new model.Task(2, "Learning", true, false, 14));
         model.tasklist.push(new model.Task(3, "Stories Tasks", true, true, 11));
-        model.tasklist.push(new model.Task(4, "SC Task", true, true, 1));
+        model.tasklist.push(new model.Task(4, "SC Task", false, true, 1));
         model.tasklist.push(new model.Task(5, "Portal Swweys", true, false, 2));
-        model.tasklist.push(new model.Task(6, "Campaign Tasks", true, false, 1));
+        model.tasklist.push(new model.Task(6, "Campaign Tasks", false, false, 1));
         model.tasklist.push(new model.Task(7, "Learning", true, false, 14));
         model.tasklist.push(new model.Task(8, "Stories Tasks", true, true, 11));
-        model.tasklist.push(new model.Task(9, "SC Task", true, true, 1));
+        model.tasklist.push(new model.Task(9, "SC Task", false, true, 1));
         model.tasklist.push(new model.Task(10, "Portal Swweys", true, false, 2));
-        model.tasklist.push(new model.Task(11, "Campaign Tasks", true, false, 1));
+        model.tasklist.push(new model.Task(11, "Campaign Tasks", false, false, 1));
         model.tasklist.push(new model.Task(12, "Learning", true, false, 14));
         model.tasklist.push(new model.Task(13, "Stories Tasks", true, true, 11));
-        model.tasklist.push(new model.Task(14, "SC Task", true, true, 1));
+        model.tasklist.push(new model.Task(14, "SC Task", false, true, 1));
         model.tasklist.push(new model.Task(15, "Portal Swweys", true, false, 2));
-        model.tasklist.push(new model.Task(16, "Campaign Tasks", true, false, 1));
+        model.tasklist.push(new model.Task(16, "Campaign Tasks", false, false, 1));
         model.tasklist.push(new model.Task(17, "Learning", true, false, 14));
         model.tasklist.push(new model.Task(18, "Stories Tasks", true, true, 11));
-        model.tasklist.push(new model.Task(19, "SC Task", true, true, 1));
+        model.tasklist.push(new model.Task(19, "SC Task", false, true, 1));
         model.tasklist.push(new model.Task(20, "Portal Swweys", true, false, 2));
     };
 
@@ -49,23 +49,22 @@ const TodoAPI = ((model) => {
 const View = ((model) => {
     const listView = document.querySelector('.list');
     const addTask = (id, title, isTask, isOverdue, counter) => {
-        if (isTask){
-            let overdue = '';
-            let duesoon = '';
-            isOverdue ? duesoon='unselected' : overdue='unselected';
-            htmlblock = 
-                `<div class="items" id="${id}">
-                <div class="task-name">
-                <label class="task-container">${title}<input type="checkbox" class="task-checkbox"><span class="checkmark"></span></label>
-                </div>
-                <div class="labels">
-                    <div class="overdue-lab ${overdue}">${counter} Overdue</div>
-                    <div class="soon-lab ${duesoon}">${counter} Due Soon</div>
-                </div>
-                </div>`;
-            
-            listView.innerHTML += htmlblock;
-        }
+        let overdue = '';
+        let duesoon = '';
+        isOverdue ? duesoon='unselected' : overdue='unselected';
+        htmlblock = 
+            `<div class="items" id="${id}">
+            <div class="task-name">
+            <label class="task-container">${title}<input type="checkbox" class="task-checkbox"><span class="checkmark"></span></label>
+            </div>
+            <div class="labels">
+                <div class="overdue-lab ${overdue}">${counter} Overdue</div>
+                <div class="soon-lab ${duesoon}">${counter} Due Soon</div>
+            </div>
+            </div>`;
+        
+        listView.innerHTML += htmlblock;
+        
     };
 
     const setOverdueCounter = (amount) => {
@@ -89,7 +88,7 @@ const View = ((model) => {
             if (!showtask){
                 addTask(task.id, task.title, task.isTask, task.isOverdue, task.counter);
             }else{
-                if (!task.isOverdue){
+                if (task.isTask){
                     addTask(task.id, task.title, task.isTask, task.isOverdue, task.counter);
                 }
             }

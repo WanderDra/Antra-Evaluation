@@ -53,6 +53,7 @@ html, body{
 
 .overdue{
     width: 60%;
+    grid-area: overdue;
     justify-self: left;
     text-align: center;
     font-size: 1.3rem;
@@ -60,12 +61,14 @@ html, body{
 
 .due-soon{
     width: 80%;
+    grid-area: due-soon;
     text-align: center;
     font-size: 1.3rem;
 }
 
 .all{
     width: 60%;
+    grid-area: all;
     justify-self: right;
     text-align: center;
     font-size: 1.3rem;
@@ -241,4 +244,10 @@ svg text{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  @media only screen and (max-width: 400px){
+      .show-task{
+          display: none;
+      }
   }
